@@ -1,10 +1,8 @@
 extends TextureButton
 
 
-var curar : TextureProgressBar
+# Called when the node enters the scene tree for the first time.
+var vidaEnemigo : TextureProgressBar
 
 func _pressed() -> void:
-	curar.value += 1
-	if curar.value > 5:
-		curar.value = 5
 	queue_free()

@@ -15,7 +15,7 @@ config/ninetailsrabbit.lootie/update_notification_enabled=true
 [application]
 
 config/name="La vida mejora, el godot no"
-run/main_scene="res://node_2d.tscn"
+run/main_scene="res://cartafiumba.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 

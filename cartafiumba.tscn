@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://86xpch7auyjn"]
+
+[ext_resource type="Script" path="res://node_2d.gd" id="1_vvow1"]
+[ext_resource type="Texture2D" uid="uid://dkwqcoqwpiaga" path="res://Fondo prototipo.png" id="2_6jfwj"]
+[ext_resource type="Texture2D" uid="uid://b4b3u6jr5hkei" path="res://Prototipo reversa.png" id="2_b1ogl"]
+[ext_resource type="Texture2D" uid="uid://cy6660mhkbv4g" path="res://Mesa prototipo.png" id="3_jxyei"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_arfsh"]
+size = Vector2(220.625, 285.5)
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(3, 1)
+script = ExtResource("1_vvow1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(573, 323.5)
+scale = Vector2(3.6, 3.59444)
+texture = ExtResource("2_6jfwj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(578.5, 330)
+scale = Vector2(3.70313, 3.54444)
+texture = ExtResource("3_jxyei")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+texture_filter = 1
+offset_left = 481.0
+offset_top = 406.0
+offset_right = 634.0
+offset_bottom = 619.0
+texture_normal = ExtResource("2_b1ogl")
+stretch_mode = 0
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(555, 202)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+z_as_relative = false
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_arfsh")
