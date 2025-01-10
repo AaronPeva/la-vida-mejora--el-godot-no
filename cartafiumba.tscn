@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=3 uid="uid://w5wwwqup3uhh"]
+
+[ext_resource type="Script" path="res://node_2d.gd" id="1_vvow1"]
+[ext_resource type="Texture2D" uid="uid://dkwqcoqwpiaga" path="res://Fondo prototipo.png" id="2_6jfwj"]
+[ext_resource type="Texture2D" uid="uid://ne7sfemdd8yq" path="res://DUOLINGO JEFE 1 MORAO.png" id="3_68bf6"]
+[ext_resource type="Texture2D" uid="uid://cy6660mhkbv4g" path="res://Mesa prototipo.png" id="3_jxyei"]
+[ext_resource type="Texture2D" uid="uid://bgtq3xrhrjp3f" path="res://E2 RETOCAR.png" id="4_hgm0r"]
+[ext_resource type="Texture2D" uid="uid://dmcpx7un077mo" path="res://POLITOED MASON 1 MORAO.png" id="4_scjvq"]
+[ext_resource type="Texture2D" uid="uid://n4mhkp0fc8ei" path="res://MODELO CON VIDA.png" id="5_3c824"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_arfsh"]
+size = Vector2(220.625, 285.5)
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(3, 1)
+script = ExtResource("1_vvow1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(573, 323.5)
+scale = Vector2(3.6, 3.59444)
+texture = ExtResource("2_6jfwj")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(586, 265)
+scale = Vector2(5.38, 4.96431)
+texture = ExtResource("4_scjvq")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(584, 275)
+scale = Vector2(4.4, 3.98861)
+texture = ExtResource("3_68bf6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(578.5, 327)
+scale = Vector2(3.70313, 3.57778)
+texture = ExtResource("3_jxyei")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+texture_filter = 1
+offset_left = 481.0
+offset_top = 406.0
+offset_right = 634.0
+offset_bottom = 619.0
+texture_normal = ExtResource("4_hgm0r")
+stretch_mode = 0
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(555, 202)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+z_as_relative = false
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_arfsh")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(112, 39)
+scale = Vector2(2.72, 2.51722)
+texture = ExtResource("5_3c824")
+flip_h = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1030, 583)
+scale = Vector2(2.975, 2.77431)
+texture = ExtResource("5_3c824")

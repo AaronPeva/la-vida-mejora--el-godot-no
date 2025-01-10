@@ -1,12 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvwhttq1q0311"]
+[gd_scene load_steps=3 format=3 uid="uid://bvwhttq1q0311"]
 
 [ext_resource type="Texture2D" uid="uid://mcua603j00fg" path="res://Imagenes/image.png" id="1_uws5m"]
+[ext_resource type="Script" path="res://dfdsfdsf.gd" id="2_supqc"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureButton" type="TextureButton" parent="."]
 texture_filter = 1
-offset_top = -13.0
-offset_right = 264.0
-offset_bottom = 395.0
-texture = ExtResource("1_uws5m")
+offset_right = 275.0
+offset_bottom = 429.0
+texture_normal = ExtResource("1_uws5m")
+stretch_mode = 0
+script = ExtResource("2_supqc")
