@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmwjuhwp8da72"]
+[gd_scene load_steps=3 format=3 uid="uid://ccr7co21nqhub"]
 
 [ext_resource type="Script" path="res://node_2_prueba.gd" id="1_m2moa"]
-[ext_resource type="Script" path="res://addons/godot_card_layout/layouts/hand_layout/gcard_hand_layout.gd" id="2_3j5cq"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_m2moa")
@@ -13,20 +12,10 @@ offset_right = 367.0
 offset_bottom = 218.0
 
 [node name="GridContainer" type="GridContainer" parent="."]
-visible = false
 offset_left = 48.0
 offset_top = 321.0
 offset_right = 1053.0
 offset_bottom = 616.0
 columns = 5
-
-[node name="GCardHandLayout" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 146.0
-offset_top = 255.0
-offset_right = 776.0
-offset_bottom = 513.0
-script = ExtResource("2_3j5cq")
 
 [connection signal="pressed" from="Button" to="." method="robar_carta"]

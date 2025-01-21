@@ -1,0 +1,154 @@
+[gd_scene load_steps=11 format=3 uid="uid://86xpch7auyjn"]
+
+[ext_resource type="Script" path="res://node_2d.gd" id="1_a1t5a"]
+[ext_resource type="Texture2D" uid="uid://cqxg34ji58jgc" path="res://Imagenes/1729089595254.png_image.png" id="1_rqo2n"]
+[ext_resource type="Texture2D" uid="uid://cvmi0smgr76ej" path="res://Imagenes/unnamed.png" id="2_ety1u"]
+[ext_resource type="Texture2D" uid="uid://c8aw7vmlwyihp" path="res://Imagenes/738371-middle.png" id="3_13m7t"]
+[ext_resource type="Script" path="res://addons/godot_card_layout/layouts/hand_layout/gcard_hand_layout.gd" id="4_xkxp5"]
+[ext_resource type="Texture2D" uid="uid://mcua603j00fg" path="res://Imagenes/image.png" id="5_2gul5"]
+[ext_resource type="Texture2D" uid="uid://bpbo8i8hqnlta" path="res://Imagenes/barra vacia de vida.png" id="6_dw35h"]
+[ext_resource type="Texture2D" uid="uid://beraux8ogasyv" path="res://Imagenes/barra de vida.png" id="7_1q04v"]
+[ext_resource type="Script" path="res://texture_button.gd" id="7_doktu"]
+[ext_resource type="Script" path="res://texture_button_2.gd" id="8_r3g7i"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(446, 210)
+script = ExtResource("1_a1t5a")
+
+[node name="Fondo" type="TextureRect" parent="."]
+modulate = Color(0.633757, 0.633757, 0.633757, 1)
+self_modulate = Color(0.36283, 0.362829, 0.362829, 1)
+show_behind_parent = true
+offset_left = -449.0
+offset_top = -213.0
+offset_right = 1479.0
+offset_bottom = 881.0
+texture = ExtResource("1_rqo2n")
+expand_mode = 1
+
+[node name="Mesa" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = -435.0
+offset_top = 206.0
+offset_right = 1496.0
+offset_bottom = 876.0
+texture = ExtResource("2_ety1u")
+
+[node name="En" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(524, 261)
+scale = Vector2(0.755556, 0.608687)
+texture = ExtResource("3_13m7t")
+
+[node name="GCardHandLayout" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 497.0
+offset_top = 456.0
+offset_right = 706.0
+offset_bottom = 587.0
+script = ExtResource("4_xkxp5")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton" type="TextureButton" parent="GCardHandLayout"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.128147
+anchor_top = 1.85246
+anchor_right = -0.128147
+anchor_bottom = 1.85246
+offset_left = -92.2172
+offset_top = 29.1558
+offset_right = -10.2173
+offset_bottom = 150.156
+rotation = -0.15708
+texture_normal = ExtResource("5_2gul5")
+stretch_mode = 0
+script = ExtResource("7_doktu")
+
+[node name="TextureButton2" type="TextureButton" parent="GCardHandLayout"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.128147
+anchor_top = 1.85246
+anchor_right = -0.128147
+anchor_bottom = 1.85246
+offset_left = -53.2296
+offset_top = 24.5413
+offset_right = 28.7704
+offset_bottom = 145.541
+rotation = -0.0785398
+texture_normal = ExtResource("5_2gul5")
+stretch_mode = 0
+script = ExtResource("8_r3g7i")
+
+[node name="TextureButton3" type="TextureButton" parent="GCardHandLayout"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.128147
+anchor_top = 1.85246
+anchor_right = -0.128147
+anchor_bottom = 1.85246
+offset_left = -14.0
+offset_top = 23.0
+offset_right = 68.0
+offset_bottom = 144.0
+texture_normal = ExtResource("5_2gul5")
+stretch_mode = 0
+
+[node name="TextureButton4" type="TextureButton" parent="GCardHandLayout"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.128147
+anchor_top = 1.85246
+anchor_right = -0.128147
+anchor_bottom = 1.85246
+offset_left = 25.2295
+offset_top = 24.5413
+offset_right = 107.23
+offset_bottom = 145.541
+rotation = 0.0785398
+texture_normal = ExtResource("5_2gul5")
+stretch_mode = 0
+
+[node name="TextureButton5" type="TextureButton" parent="GCardHandLayout"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.128147
+anchor_top = 1.85246
+anchor_right = -0.128146
+anchor_bottom = 1.85246
+offset_left = 64.2172
+offset_top = 29.1558
+offset_right = 146.217
+offset_bottom = 150.156
+rotation = 0.15708
+texture_normal = ExtResource("5_2gul5")
+stretch_mode = 0
+
+[node name="vidaE" type="TextureProgressBar" parent="."]
+offset_left = -415.0
+offset_top = -177.0
+offset_right = 295.0
+offset_bottom = 1.0
+max_value = 5.0
+value = 5.0
+nine_patch_stretch = true
+texture_under = ExtResource("6_dw35h")
+texture_progress = ExtResource("7_1q04v")
+
+[node name="vidaJ" type="TextureProgressBar" parent="."]
+offset_left = 994.0
+offset_top = 754.0
+offset_right = 1455.0
+offset_bottom = 881.0
+max_value = 5.0
+value = 5.0
+nine_patch_stretch = true
+texture_under = ExtResource("6_dw35h")
+texture_progress = ExtResource("7_1q04v")

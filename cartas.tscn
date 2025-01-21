@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://cat6kvllipxov"]
+
+[ext_resource type="Script" path="res://cartas.gd" id="1_2lb4y"]
+[ext_resource type="Texture2D" uid="uid://3lub2llomfpe" path="res://C6.png" id="2_jd1aw"]
+[ext_resource type="Texture2D" uid="uid://m17lfmw03ht7" path="res://R5.png" id="3_vyphi"]
+
+[node name="cartas" type="Node2D"]
+script = ExtResource("1_2lb4y")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 5
+
+[node name="A1" type="TextureButton" parent="."]
+texture_filter = 1
+offset_left = -732.0
+offset_top = 83.0
+offset_right = -559.0
+offset_bottom = 337.0
+texture_normal = ExtResource("2_jd1aw")
+stretch_mode = 0
+
+[node name="Button" type="Button" parent="."]
+offset_left = 8.0
+offset_top = -1.0
+offset_right = 169.0
+offset_bottom = 157.0
+
+[node name="A2" type="TextureButton" parent="."]
+texture_filter = 1
+offset_left = -970.0
+offset_top = 107.0
+offset_right = -816.0
+offset_bottom = 334.0
+texture_normal = ExtResource("3_vyphi")
+stretch_mode = 0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

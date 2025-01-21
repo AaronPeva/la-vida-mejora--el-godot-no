@@ -1,0 +1,31 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="La vida mejora, el godot no"
+run/main_scene="res://node_2d.tscn"
+config/features=PackedStringArray("4.3", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+Toolkit="*res://addons/godottoolkit/toolkit.gd"
+Cursor="*res://addons/awesome_custom_cursor/Autoloads/Cursor.tscn"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/ScriptEditorQoL/plugin.cfg", "res://addons/Todo_Manager/plugin.cfg", "res://addons/ai_algorithms/plugin.cfg", "res://addons/awesome_custom_cursor/plugin.cfg", "res://addons/focus_camera_with_mouse/plugin.cfg", "res://addons/globalize-plugins/plugin.cfg", "res://addons/godot-game-settings-main/plugin.cfg", "res://addons/godottoolkit/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/script-ide/plugin.cfg")
