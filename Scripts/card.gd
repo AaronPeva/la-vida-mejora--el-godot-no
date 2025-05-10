@@ -2,16 +2,20 @@ extends Node2D
 
 signal hovered
 signal hovered_off
-var barra_vida
+signal bot_attacked
+var barra_energia
 var energy_consume = 1
 var starting_position
 var card_slot_card_is_in
-var attack
+@onready var richtext = $Attack
+var attack 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	get_parent().connect_card_signals(self) # Replace with function body.
-	barra_vida = get_node("/root/Main/EnergyNode/EnergyBar")
+	barra_energia = get_node("/root/Main/EnergyNode/EnergyBar")
+	attack = richtext.text.to_int()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -28,10 +32,16 @@ func isPlayerCharacterCard() -> bool:
 	return self.scene_file_path == Global.escena_seleccionada
 
 func _consume_card() -> void:
-	if barra_vida:
-		barra_vida.value -= energy_consume
+	if barra_energia:
+		barra_energia.value -= energy_consume
 	else:
 		print("⚠️ ¡No tengo barra, coach!")
+
+func _remove_card() -> void:
+	var hand_manager = get_node("/root/Main/PlayerHand")  # Ajusta esta ruta a tu escena
+	if hand_manager:
+		hand_manager.remove_card_from_hand(self)
+		self.queue_free()
 
 func _delete_card() -> void:
 	queue_free()

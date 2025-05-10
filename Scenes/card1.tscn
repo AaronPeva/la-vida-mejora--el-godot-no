@@ -23,7 +23,6 @@ texture = ExtResource("1_4uvki")
 shape = SubResource("RectangleShape2D_0sj8v")
 
 [node name="Attack" type="RichTextLabel" parent="."]
-visible = false
 offset_left = -104.0
 offset_top = 88.0
 offset_right = -36.0

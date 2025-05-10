@@ -1,6 +1,6 @@
 extends Node2D
 
-const CARD_SCENE_PATH = "res://Scenes/card1.tscn"
+const CARD_SCENE_PATH = "res://Scenes/Enemycard1.tscn"
 const card_draw_speed = 0.4
 var player_deck = []  # Cartas disponibles
 var card_database_reference
@@ -38,7 +38,7 @@ func draw_card():
 			
 			#player_deck.erase(card_draw)# Ahora la carta no se elimina
 			player_deck.erase(card_draw)
-			var card_scene = load(CARD_SCENE_PATH)
+			var card_scene = load("res://Scenes/card1.tscn")
 			var new_card = card_scene.instantiate()
 			new_card.set_script(card_script) #seteamos el script
 			var card_image_path = str("res://Imagenes/Cartas/" + id_card + "Card.png")

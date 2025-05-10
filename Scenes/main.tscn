@@ -1,26 +1,29 @@
-[gd_scene load_steps=19 format=3 uid="uid://c4d8aa1saijwy"]
+[gd_scene load_steps=20 format=3 uid="uid://c4d8aa1saijwy"]
 
 [ext_resource type="Script" uid="uid://cnsvfypuwvxpe" path="res://Scripts/card_manager.gd" id="1_3bc8y"]
 [ext_resource type="Script" uid="uid://bpu8v3l7ypyef" path="res://Scripts/main.gd" id="1_6bp64"]
-[ext_resource type="Texture2D" uid="uid://d20kttcxijqvo" path="res://Imagenes/Fondodeprueba.png" id="2_fdnlq"]
 [ext_resource type="Script" uid="uid://cuig5d2jqtspk" path="res://Scripts/PlayerHand.gd" id="3_lxjeb"]
 [ext_resource type="Script" uid="uid://by6d8x0k7yyuy" path="res://Scripts/Deck.gd" id="4_q8rok"]
 [ext_resource type="Texture2D" uid="uid://by8glhlb0gih1" path="res://Imagenes/Mazo.png" id="5_bvle5"]
 [ext_resource type="Script" uid="uid://l3gkvyqn1lao" path="res://Scripts/inputManager.gd" id="6_56th6"]
-[ext_resource type="Script" uid="uid://cjptolixx1cnl" path="res://Scripts/bot.gd" id="7_6bp64"]
 [ext_resource type="Script" uid="uid://g8jnrs0pdtwh" path="res://Scripts/energy_node.gd" id="8_d1ilt"]
-[ext_resource type="Texture2D" uid="uid://4xed87u62n6r" path="res://Imagenes/Fondoprueba.png" id="9_6iyac"]
-[ext_resource type="Texture2D" uid="uid://c17l4uosg6aap" path="res://Imagenes/Bordeprueba.png" id="10_fdnlq"]
-[ext_resource type="Texture2D" uid="uid://crkrs6o0hx025" path="res://Imagenes/Rellenoprueba.png" id="11_jkdf5"]
+[ext_resource type="Texture2D" uid="uid://dl85wafg8cbxs" path="res://Imagenes/bolafortnite.png" id="8_k12tt"]
+[ext_resource type="Texture2D" uid="uid://bdsf1kxceypis" path="res://Imagenes/fondoprototipo4.png" id="10_k12tt"]
 [ext_resource type="FontFile" uid="uid://bl3u516fpt1a4" path="res://Imagenes/blood_crow/bloodcrow.ttf" id="12_6iyac"]
 [ext_resource type="Texture2D" uid="uid://djklb4rcalrqm" path="res://Imagenes/lineagod.png" id="14_jkdf5"]
 [ext_resource type="Texture2D" uid="uid://djlndu3xweili" path="res://Imagenes/ButtonSeleccionar.png" id="15_wsu2k"]
+[ext_resource type="Script" path="res://Scenes/bot.gd" id="16_b3802"]
+[ext_resource type="Texture2D" uid="uid://dw5jaln3rr3de" path="res://Imagenes/Walter-White-Breaking-Bad-Series-PNG.png" id="16_h1bgf"]
 [ext_resource type="AudioStream" uid="uid://dw1datquo7ip1" path="res://Musica/batalla2.mp3" id="16_k12tt"]
+[ext_resource type="Texture2D" uid="uid://dlm1u1dokh0fk" path="res://Imagenes/markicat.jpg" id="18_b3802"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ilbd4"]
 size = Vector2(7.7037, 10.6667)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k12tt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k12tt"]
+size = Vector2(272, 307)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_6bp64")
@@ -69,28 +72,23 @@ offset_right = 1320.0
 offset_bottom = 816.0
 text = "Salir"
 
-[node name="Bot" type="Node2D" parent="."]
-script = ExtResource("7_6bp64")
-
-[node name="TimerBot" type="Timer" parent="Bot"]
-wait_time = 5.0
-
 [node name="EnergyNode" type="Node2D" parent="."]
 script = ExtResource("8_d1ilt")
 
-[node name="EnergyBar" type="TextureProgressBar" parent="EnergyNode"]
+[node name="Energ" type="Sprite2D" parent="EnergyNode"]
 texture_filter = 1
+position = Vector2(1736, 557)
+scale = Vector2(6.93334, 6.93333)
+texture = ExtResource("8_k12tt")
+
+[node name="TextoEnerg" type="Label" parent="EnergyNode"]
 offset_left = 1728.0
-offset_top = 592.0
-offset_right = 1880.0
-offset_bottom = 1000.0
-max_value = 5.0
-value = 1.0
-fill_mode = 3
-nine_patch_stretch = true
-texture_under = ExtResource("9_6iyac")
-texture_over = ExtResource("10_fdnlq")
-texture_progress = ExtResource("11_jkdf5")
+offset_top = 518.0
+offset_right = 1756.0
+offset_bottom = 582.0
+theme_override_fonts/font = ExtResource("12_6iyac")
+theme_override_font_sizes/font_size = 54
+text = "0"
 
 [node name="IndicadorTurno" type="Label" parent="."]
 texture_filter = 1
@@ -109,12 +107,12 @@ show_behind_parent = true
 z_index = -100
 texture_filter = 1
 position = Vector2(960, 540)
-scale = Vector2(13.3333, 13.3333)
-texture = ExtResource("2_fdnlq")
-metadata/_edit_lock_ = true
+scale = Vector2(17.9439, 17.7049)
+texture = ExtResource("10_k12tt")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(952, 548)
+visible = false
+position = Vector2(960, 548)
 scale = Vector2(96, 5.6)
 texture = ExtResource("14_jkdf5")
 
@@ -139,6 +137,35 @@ expand_icon = true
 stream = ExtResource("16_k12tt")
 autoplay = true
 
+[node name="Bot" type="Node2D" parent="."]
+script = ExtResource("16_b3802")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bot"]
+position = Vector2(964, 306)
+scale = Vector2(0.292725, 0.277686)
+texture = ExtResource("16_h1bgf")
+
+[node name="vidabot" type="ProgressBar" parent="Bot/Sprite2D"]
+offset_left = -1004.36
+offset_top = 493.363
+offset_right = 1021.64
+offset_bottom = 705.363
+theme_override_font_sizes/font_size = 90
+value = 100.0
+
+[node name="Area2D" type="Area2D" parent="Bot"]
+position = Vector2(967, 302)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bot/Area2D"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_k12tt")
+
+[node name="Horcus" type="Sprite2D" parent="."]
+position = Vector2(-1992, 1832)
+scale = Vector2(0.597946, 0.899244)
+texture = ExtResource("18_b3802")
+
 [connection signal="pressed" from="Atacar" to="." method="_on_atacar_pressed"]
 [connection signal="pressed" from="Salir" to="." method="_on_boton_salir_pressed"]
 [connection signal="pressed" from="Saltar" to="." method="_on_saltar_pressed"]
+[connection signal="area_entered" from="Bot/Area2D" to="Bot" method="_on_area_2d_area_entered"]
