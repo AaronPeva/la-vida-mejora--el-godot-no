@@ -4,7 +4,6 @@ const CARD_WIDTH = 95
 const HAND_Y_POSITION = 985
 const DEFAULT_CARD_MOVE_SPEED = 0.2
 const MAX_HAND_SIZE = 5
-
 var player_hand = []
 var center_screen_x
 

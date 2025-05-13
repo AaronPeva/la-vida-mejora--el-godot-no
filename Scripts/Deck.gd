@@ -1,6 +1,6 @@
 extends Node2D
 
-const CARD_SCENE_PATH = "res://Scenes/card1.tscn"
+const CARD_SCENE_PATH = "res://Scenes/Enemycard1.tscn"
 const card_draw_speed = 0.4
 var player_deck = []  # Cartas disponibles
 var card_database_reference
@@ -38,16 +38,16 @@ func draw_card():
 			
 			#player_deck.erase(card_draw)# Ahora la carta no se elimina
 			player_deck.erase(card_draw)
-			var card_scene = load(CARD_SCENE_PATH)
+			var card_scene = load("res://Scenes/card1.tscn")
 			var new_card = card_scene.instantiate()
 			new_card.set_script(card_script) #seteamos el script
 			var card_image_path = str("res://Imagenes/Cartas/" + id_card + "Card.png")
 			new_card.get_node("CardImage").texture = load(card_image_path)
 			# Asegurar que la carta tiene los nodos esperados antes de asignar valores
-			if new_card.has_node("Attack") and new_card.has_node("Energy"):
-				new_card.get_node("Attack").text = str(card_database_reference.CARDS[card_draw][0])
+			if new_card.has_node("Valor") and new_card.has_node("Energy"):
+				new_card.get_node("Valor").text = str(card_database_reference.CARDS[card_draw][0])
 				new_card.get_node("Energy").text = str(card_database_reference.CARDS[card_draw][1])
-				new_card.attack = str(card_database_reference.CARDS[card_draw][0])
+				new_card.valor = str(card_database_reference.CARDS[card_draw][0])
 
 			$"../CardManager".add_child(new_card)
 			new_card.name = "Card"

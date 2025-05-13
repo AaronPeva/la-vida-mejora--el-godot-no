@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var bot = $Bot
+@onready var timer = $timer
 @onready var atacar = $Atacar
 @onready var salir = $Salir
 @onready var saltar = $Saltar
@@ -47,7 +47,7 @@ func _on_atacar_pressed() -> void:
 		atacar.visible = false
 		salir.visible = false
 		saltar.visible = false
-		bot.cambiar_turno()
+		timer.cambiar_turno()
 
 
 func _on_saltar_pressed() -> void:
@@ -57,7 +57,15 @@ func _on_saltar_pressed() -> void:
 		atacar.visible = false
 		salir.visible = false
 		saltar.visible = false
-		bot.cambiar_turno()
-		
-	#ESTO VA, ENTERAO?
-	
+		timer.cambiar_turno()
+
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	var nodo = area.get_parent()
+	if nodo.is_in_group("cartas"):
+		nodo.accion_consumible()
+
+
+func _on_timer_bot_timeout() -> void:
+	pass # Replace with function body.

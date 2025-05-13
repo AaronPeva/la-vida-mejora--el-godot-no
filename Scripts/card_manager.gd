@@ -31,12 +31,13 @@ func start_drag(card):
 		card.scale = Vector2(0.475, 0.475)
 		card.highlight_card(true)
 
+
 func finish_drag():
 	card_being_dragged.scale = Vector2(0.4, 0.4)
 	player_hand_reference.add_card_to_hand(card_being_dragged, DEFAULT_CARD_MOVE_SPEED)
 	card_being_dragged.highlight_card(false)
 	card_being_dragged = null
-	
+
 
 func connect_card_signals(card):
 	if card.isPlayerCharacterCard():
